@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity,ScrollView } from 'react-native';
 import { Constants } from 'expo';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right,Title } from 'native-base';
 
@@ -10,17 +10,34 @@ export default class App extends React.Component {
   render() {
     let menuItems = [];
         for (var i = 0; i < 20; i++) {
-            menuItems.push(<TouchableOpacity onPress={() => console.log('Yea')}>
+            menuItems.push(
+
+              <TouchableOpacity onPress={() => console.log('Yea')}>
                         <Card id = {i}>
-                         <CardItem>
-                           <Body>
+                                     <CardItem>
+                                       <Body>
+
+                           <Image
+
+                               style={styles.fit}
+                               source={require('./flower.jpg')}
+                             />
+
+                  <View style = {{
+                  flex: 1,
+                  alignItems: 'left',
+                  }
+                  }>
                              <Text>this is a simple card with image and title</Text>
                               <Text>this is a simple card with image and title2</Text>
                                <Text>this is a simple card with image and title3</Text>
+
+                 </View>
                            </Body>
                          </CardItem>
                        </Card>
-        </TouchableOpacity>);
+        </TouchableOpacity>
+        );
         }
 
 
@@ -29,9 +46,9 @@ export default class App extends React.Component {
     return (
 <View style={styles.topBar}>
       <Text style={styles.topBar2}>Ouri's App</Text>
-
+<ScrollView>
       {menuItems}
-
+</ScrollView>
 
 </View>
 
