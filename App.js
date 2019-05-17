@@ -16,22 +16,29 @@ export default class App extends React.Component {
                         <Card id = {i}>
                                      <CardItem>
                                        <Body>
-
+                                       <View style = {{
+                                       flex: 1,
+                                       alignItems: 'center',
+                                       flexDirection: 'row',
+                                       justifyContent: 'space-between',
+                                       }
+                                       }>
                            <Image
 
                                style={styles.fit}
                                source={require('./flower.jpg')}
                              />
 
-                  <View style = {{
-                  flex: 1,
-                  alignItems: 'left',
-                  }
-                  }>
+                             <View style = {{
+                             flex: 1,
+                             flexDirection: 'column',
+                             justifyContent: 'space-between',
+                             }
+                             }>
                              <Text>this is a simple card with image and title</Text>
                               <Text>this is a simple card with image and title2</Text>
                                <Text>this is a simple card with image and title3</Text>
-
+</View>
                  </View>
                            </Body>
                          </CardItem>
