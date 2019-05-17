@@ -1,24 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Image, TouchableOpacity } from 'react-native';
 import { Constants } from 'expo';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Right,Title } from 'native-base';
 
 
 export default class App extends React.Component {
+
+
   render() {
+    let menuItems = [];
+        for (var i = 0; i < 20; i++) {
+            menuItems.push(<TouchableOpacity onPress={() => console.log('Yea')}>
+                        <Card id = {i}>
+                         <CardItem>
+                           <Body>
+                             <Text>this is a simple card with image and title</Text>
+                              <Text>this is a simple card with image and title2</Text>
+                               <Text>this is a simple card with image and title3</Text>
+                           </Body>
+                         </CardItem>
+                       </Card>
+        </TouchableOpacity>);
+        }
+
+
+
+
     return (
 <View style={styles.topBar}>
-
-
       <Text style={styles.topBar2}>Ouri's App</Text>
 
-                <Card>
-                 <CardItem>
-                   <Body>
-                     <Text>this is a simple card with image and title2</Text>
-                   </Body>
-                 </CardItem>
-               </Card>
+      {menuItems}
 
 
 </View>
